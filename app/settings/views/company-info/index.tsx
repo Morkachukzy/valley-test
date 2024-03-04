@@ -14,13 +14,15 @@ import { Button } from "@/components/ui/button";
 export const DashboardCompanyInfoSettings = () => {
   return (
     <div className="space-y-10">
-      <section className="flex items-center justify-between gap-3">
+      <section className="flex flex-col-reverse justify-between gap-7 md:flex-row md:items-center md:gap-3">
         <UpdateAvatar />
-        <div className="flex items-center  gap-3">
-          <Button size="sm" variant="outline">
+        <div className="flex w-full items-center gap-3 md:w-fit">
+          <Button className="flex-1 md:flex-none " size="sm" variant="outline">
             Cancel
           </Button>
-          <Button size="sm">Save changes</Button>
+          <Button className="flex-1 md:flex-none" size="sm">
+            Save changes
+          </Button>
         </div>
       </section>
       <section className="grid w-full gap-x-6 gap-y-6 md:grid-cols-2">
