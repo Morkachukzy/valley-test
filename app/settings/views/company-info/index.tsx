@@ -8,11 +8,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { UpdateAvatar } from "./update-avatar";
+import { Button } from "@/components/ui/button";
 
 export const DashboardCompanyInfoSettings = () => {
   return (
     <div className="space-y-10">
-      <section className="grid w-full md:grid-cols-2 gap-x-6 gap-y-6">
+      <section className="flex items-center justify-between gap-3">
+        <UpdateAvatar />
+        <div className="flex items-center  gap-3">
+          <Button size="sm" variant="outline">
+            Cancel
+          </Button>
+          <Button size="sm">Save changes</Button>
+        </div>
+      </section>
+      <section className="grid w-full gap-x-6 gap-y-6 md:grid-cols-2">
         <div className="">
           <Label htmlFor="company-name">Company's Name</Label>
           <Input id="company-name" type="text" />
@@ -31,7 +42,7 @@ export const DashboardCompanyInfoSettings = () => {
         </div>
       </section>
 
-      <section className="grid w-full md:grid-cols-2 gap-x-6 gap-y-6">
+      <section className="grid w-full gap-x-6 gap-y-6 md:grid-cols-2">
         <div className="">
           <Label htmlFor="company-description">Company description</Label>
           <Input id="company-description" type="text" />
@@ -46,7 +57,7 @@ export const DashboardCompanyInfoSettings = () => {
         </div>
       </section>
 
-      <section className="grid w-full md:grid-cols-2 gap-x-6 gap-y-6">
+      <section className="grid w-full gap-x-6 gap-y-6 md:grid-cols-2">
         <div className="">
           <Label htmlFor="funding-round">Funding Round</Label>
           <Select>
