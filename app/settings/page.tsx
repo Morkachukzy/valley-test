@@ -3,13 +3,13 @@ import { settingsTabs } from "./views";
 
 export default function DashboardSettings() {
   return (
-    <div className="sm:px-6 md:px-10">
+    <div className="md:px-6">
       <div className="container max-w-7xl space-y-8 px-0 py-12 ">
         <h2 className="text-4xl font-semibold">Settings</h2>
 
         <Tabs defaultValue={settingsTabs[1].id}>
           <div className="px-6 md:px-0">
-            <TabsList className="no-scrollbar flex max-w-full snap-x snap-mandatory justify-start overflow-scroll">
+            <TabsList className="no-scrollbar flex max-w-fit snap-x snap-mandatory justify-start overflow-scroll">
               {settingsTabs.map((tab) => (
                 <TabsTrigger
                   key={tab.id}

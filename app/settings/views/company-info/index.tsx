@@ -10,6 +10,30 @@ import {
 } from "@/components/ui/select";
 import { UpdateAvatar } from "./update-avatar";
 import { Button } from "@/components/ui/button";
+import { nanoid } from "nanoid";
+
+const fundingRounds = [
+  {
+    id: nanoid(),
+    label: "Pre-seed",
+    value: "pre-seed",
+  },
+  {
+    id: nanoid(),
+    label: "Series A",
+    value: "series-a",
+  },
+  {
+    id: nanoid(),
+    label: "Series B",
+    value: "series-b",
+  },
+  {
+    id: nanoid(),
+    label: "Series C",
+    value: "series-c",
+  },
+] as const;
 
 export const DashboardCompanyInfoSettings = () => {
   return (
@@ -28,34 +52,62 @@ export const DashboardCompanyInfoSettings = () => {
       <section className="grid w-full gap-x-6 gap-y-6 md:grid-cols-2">
         <div className="">
           <Label htmlFor="company-name">Company's Name</Label>
-          <Input id="company-name" type="text" />
+          <Input
+            id="company-name"
+            type="text"
+            placeholder="Enter company's name"
+          />
         </div>
         <div className="">
           <Label htmlFor="company-website">Company's Website</Label>
-          <Input id="company-name" type="text" />
+          <Input
+            id="company-name"
+            type="text"
+            placeholder="Enter company's website"
+          />
         </div>
         <div className="">
           <Label htmlFor="company-linkedin">Company's Linkedin</Label>
-          <Input id="company-name" type="text" />
+          <Input
+            id="company-name"
+            type="text"
+            placeholder="Enter company's linkedin"
+          />
         </div>
         <div className="">
           <Label htmlFor="company-industry">Company's Industry</Label>
-          <Input id="company-name" type="text" />
+          <Input
+            id="company-name"
+            type="text"
+            placeholder="Enter company's industry"
+          />
         </div>
       </section>
 
       <section className="grid w-full gap-x-6 gap-y-6 md:grid-cols-2">
         <div className="">
           <Label htmlFor="company-description">Company description</Label>
-          <Input id="company-description" type="text" />
+          <Input
+            id="company-description"
+            type="text"
+            placeholder="Enter company's description"
+          />
         </div>
         <div className="">
           <Label htmlFor="company-goals">What are your company goals?</Label>
-          <Input id="company-goals" type="text" />
+          <Input
+            id="company-goals"
+            type="text"
+            placeholder="Enter company's goals"
+          />
         </div>
         <div className="">
           <Label htmlFor="company-headquarters">Headquarters</Label>
-          <Input id="company-headquarters" type="text" />
+          <Input
+            id="company-headquarters"
+            type="text"
+            placeholder="Enter company's headquarters"
+          />
         </div>
       </section>
 
@@ -64,12 +116,14 @@ export const DashboardCompanyInfoSettings = () => {
           <Label htmlFor="funding-round">Funding Round</Label>
           <Select>
             <SelectTrigger id="funding-round">
-              <SelectValue placeholder="Theme" />
+              <SelectValue placeholder="Select funding round" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
+              {fundingRounds.map((round) => (
+                <SelectItem key={round.id} value={round.value}>
+                  {round.label}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>
