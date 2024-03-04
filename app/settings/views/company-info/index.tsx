@@ -1,3 +1,5 @@
+"use client";
+
 /* eslint-disable react/no-unescaped-entities */
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,6 +13,7 @@ import {
 import { UpdateAvatar } from "./update-avatar";
 import { Button } from "@/components/ui/button";
 import { nanoid } from "nanoid";
+import { CustomRadioGroup } from "@/components/custom-radio-group";
 
 const fundingRounds = [
   {
@@ -34,6 +37,30 @@ const fundingRounds = [
     value: "series-c",
   },
 ] as const;
+
+const employeeCountOptions = [
+  {
+    id: nanoid(),
+
+    label: "1-10",
+    value: "1-10",
+  },
+  {
+    id: nanoid(),
+    label: "10-100",
+    value: "10-100",
+  },
+  {
+    id: nanoid(),
+    label: "100-500",
+    value: "100-500",
+  },
+  {
+    id: nanoid(),
+    label: "1000+",
+    value: "1000+",
+  },
+];
 
 export const DashboardCompanyInfoSettings = () => {
   return (
@@ -84,6 +111,16 @@ export const DashboardCompanyInfoSettings = () => {
         </div>
       </section>
 
+      <section className="">
+        <div className="space-y-4">
+          <Label htmlFor="employee-count">Employee Count</Label>
+          <CustomRadioGroup
+            options={employeeCountOptions}
+            value="10-100"
+            onChange={(v) => {}}
+          />
+        </div>
+      </section>
       <section className="grid w-full gap-x-6 gap-y-6 md:grid-cols-2">
         <div className="">
           <Label htmlFor="company-description">Company description</Label>
