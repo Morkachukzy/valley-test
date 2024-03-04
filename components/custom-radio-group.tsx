@@ -15,9 +15,17 @@ type CustomRadioGroupProps = Readonly<{
   onChange: (value: string) => void;
 }>;
 
-export const CustomRadioGroup = ({ options }: CustomRadioGroupProps) => {
+export const CustomRadioGroup = ({
+  options,
+  value,
+  onChange,
+}: CustomRadioGroupProps) => {
   return (
-    <RadioGroupPrimitive.Root className="flex items-center gap-3">
+    <RadioGroupPrimitive.Root
+      className="flex items-center gap-3"
+      onValueChange={onChange}
+      defaultValue={value}
+    >
       {options.map((option) => (
         <RadioGroupPrimitive.Item
           key={option.id}
@@ -25,7 +33,9 @@ export const CustomRadioGroup = ({ options }: CustomRadioGroupProps) => {
           className="data-[state=checked]:bg-black data-[state=checked]:text-white"
           asChild
         >
-          <Button variant="outline">{option.label}</Button>
+          <Button variant="outline" size="sm">
+            {option.label}
+          </Button>
         </RadioGroupPrimitive.Item>
       ))}
     </RadioGroupPrimitive.Root>
