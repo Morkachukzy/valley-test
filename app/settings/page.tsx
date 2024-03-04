@@ -5,7 +5,9 @@ export default function DashboardSettings() {
   return (
     <div className="md:px-6">
       <div className="container max-w-7xl space-y-8 px-0 py-12 ">
-        <h2 className="text-4xl font-semibold">Settings</h2>
+        <h2 className="px-6 text-[28px] font-semibold md:px-0 md:text-4xl">
+          Settings
+        </h2>
 
         <Tabs defaultValue={settingsTabs[1].id}>
           <div className="px-6 md:px-0">
