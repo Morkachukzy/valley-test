@@ -9,6 +9,6 @@ export const CompanySettingsFormSchema = z.object({
   description: z.string(),
   goals: z.string(),
   headquarters: z.string(),
-  seed: z.string(),
-  faqs: z.string().url("FAQs url must be a valid URL"),,
+  fundingRound: z.string(),
+  faqs: z.string().url("FAQs url must be a valid URL"),
 });

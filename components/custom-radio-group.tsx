@@ -12,19 +12,22 @@ type CustomRadioGroupOption = {
 type CustomRadioGroupProps = Readonly<{
   options: CustomRadioGroupOption[];
   value: string;
+  defaultValue: string;
   onChange: (value: string) => void;
 }>;
 
 export const CustomRadioGroup = ({
   options,
   value,
+  defaultValue,
   onChange,
 }: CustomRadioGroupProps) => {
   return (
     <RadioGroupPrimitive.Root
       className="flex items-center gap-3"
       onValueChange={onChange}
-      defaultValue={value}
+      value={value}
+      defaultValue={defaultValue}
     >
       {options.map((option) => (
         <RadioGroupPrimitive.Item
