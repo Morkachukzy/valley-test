@@ -246,7 +246,7 @@ export const DashboardCompanyInfoSettings = () => {
                 name="description"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Company's Description</FormLabel>
+                    <FormLabel>Company{"'"}s Description</FormLabel>
                     <FormControl>
                       <Input
                         id="description"
