@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen py-2">
+    <main className="flex min-h-screen flex-col items-center justify-center ">
       <Link href="/settings">
         <Button>Go to settings</Button>
       </Link>
